@@ -28,5 +28,10 @@ RSpec.describe Cell do
       @cell.claim("Computer")
       expect(@cell.player).to eq("O")
     end
+
+    it "does not change player when invalid input" do 
+      @cell.claim("mmmm")
+      expect(@cell.player).to eq("empty")
+    end
   end
 end
