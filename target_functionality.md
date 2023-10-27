@@ -3,9 +3,8 @@
 -
 - Cell.player return value
 - Empty Cell = "empty"
-- Player Cell = "player"
-- Computer Cell = "computer"
-- 
+- Human Cell = "X"
+- Computer Cell = "O"
 1. Cell
 - Variables: @player (string)
 - Methods: .empty? (bool), .player? (string), .claim (changes @player)
