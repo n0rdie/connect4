@@ -17,5 +17,13 @@ class Cell
       "Computer"
     end 
   end 
+
+  def claim(player_input)
+    if player_input == "Human"
+      @player = "X"
+    elsif player_input == "Computer"
+     @player = 'O'
+    end
+  end
   
 end
