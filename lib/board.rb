@@ -6,6 +6,13 @@ class Board
     def initialize
         @columns = []
         @full = false
+        fill_columns
+    end
+
+    def fill_columns
+        5.times do
+            @columns.append(Column.new)
+        end
     end
 
     def full?
@@ -20,6 +27,7 @@ class Board
         else 
             @full = false
         end
+        @full
     end
 
     def place_cell(column_letter, inputer)
