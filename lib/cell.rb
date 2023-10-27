@@ -4,5 +4,7 @@ class Cell
     @player = nil
   end
 
-  
+  def empty?
+    @player == nil 
+  end
 end
