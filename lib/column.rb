@@ -21,17 +21,20 @@ class Column
         @full
     end
 
-    def find_first_empty_cell
+    def find_first_empty_cell # returns index
         if full?
             nil
         else
-            first_empty_cell = nil
-            @cells.reverse_each do |cell|
+            #first_empty_cell = nil
+            first_empty_cell_index = nil
+            @cells.to_enum.with_index.reverse_each do |cell, index|
                 if cell.empty?
-                    first_empty_cell = cell
+                    #first_empty_cell = cell
+                    first_empty_cell_index = cell
                 end
             end
-            first_empty_cell
+            #first_empty_cell
+            first_empty_cell_index
         end
     end
 end
