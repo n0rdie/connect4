@@ -13,7 +13,7 @@ RSpec.describe Cell do
 
   describe '#empty?' do
     it 'checks that its empty' do
-      expect(@cell.player).to be nil
+      expect(@cell.player).to eq("empty")
       expect(@cell.empty?).to eq(true)
     end
   end
