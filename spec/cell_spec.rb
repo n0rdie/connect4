@@ -10,4 +10,11 @@ RSpec.describe Cell do
       expect(@cell).to be_a(Cell)
     end
   end
+
+  describe '#empty?' do
+    it 'does stuff' do
+      expect(@cell.player).to be nil
+      expect(@cell.empty?).to eq(true)
+    end
+  end
 end
