@@ -17,4 +17,11 @@ RSpec.describe Cell do
       expect(@cell.empty?).to eq(true)
     end
   end
+
+  describe '#claim' do
+    it 'claims the cell' do
+      @cell.claim("Human")
+      expect(@cell.player).to eq("X")
+    end
+  end
 end
