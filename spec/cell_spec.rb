@@ -19,9 +19,14 @@ RSpec.describe Cell do
   end
 
   describe '#claim' do
-    it 'claims the cell' do
+    it 'claims the cell for a Human' do
       @cell.claim("Human")
       expect(@cell.player).to eq("X")
+    end
+    
+    it 'claims a cell for a computer' do
+      @cell.claim("Computer")
+      expect(@cell.player).to eq("O")
     end
   end
 end
