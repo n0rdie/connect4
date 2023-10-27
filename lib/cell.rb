@@ -3,4 +3,6 @@ class Cell
   def initialize
     @player = nil
   end
+
+  
 end
