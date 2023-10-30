@@ -18,9 +18,9 @@
 - Methods: .place_cell(column_number) (fills column and makes sure that called collumn is in board), .full? (bool)
 - 
 4. Gamstate
-- Variables: 
-- Methods: .display_board, .player_turn, .computer_turn
+- Variables: @winner
+- Methods: .display_board, .player_turn, .computer_turn, .check_winner
 -
 5. Computer AI
 - Variables: 
-- Methods: 
+- Methods: .place_random
