@@ -1,4 +1,4 @@
-require '.lib/cell'
+require './lib/cell'
 
 class Column
     attr_reader :cells, :full
