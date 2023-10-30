@@ -29,4 +29,9 @@ RSpec.describe Column do
         column.find_first_empty_cell.claim('Human')
         expect(column.full?).to eq(true)
     end
+
+    it "can find first empty cell" do
+        column = Column.new
+        expect(column.find_first_empty_cell).to be_a(Cell)
+    end
 end

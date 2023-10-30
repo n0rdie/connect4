@@ -1,5 +1,5 @@
-require '.lib/cell'
-require '.lib/column'
+require './lib/cell'
+require './lib/column'
 
 class Board
     attr_reader :columns, :full
@@ -10,7 +10,7 @@ class Board
     end
 
     def fill_columns
-        5.times do
+        7.times do
             @columns.append(Column.new)
         end
     end
@@ -30,7 +30,7 @@ class Board
         @full
     end
 
-    def place_cell(column_letter, inputer)
+    def place_cell(inputer, column_letter)
         column_number = nil
         if column_letter == "A" || column_letter == "a" # coverts letter into board index
             column_number = 0
@@ -52,16 +52,16 @@ class Board
             false
         else
             column = @columns[column_number]
-            if column.full? == false
+            if column.full? == true
                 false
             else
-                column[column.find_first_empty_cell].claim(inputer)
-
-                if column[column.find_first_empty_cell].player? == inputer then # final check
-                    true
-                else
-                    false
-                end
+                column.find_first_empty_cell.claim(inputer)
+                true
+                #if column[column.find_first_empty_cell].find_player_owner == inputer then # final check
+                #    true
+                #else
+                #    false
+                #end
             end
         end
     end
