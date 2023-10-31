@@ -14,5 +14,13 @@ RSpec.describe Gamestate do
     gamestate = Gamestate.new
     expect(gamestate).to be_a(Gamestate)
   end
+
+  describe '#display' do
+it 'displays a board' do
+    gamestate = Gamestate.new
+    gamestate.display
+    end
+  end
+end
 end
 
