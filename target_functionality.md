@@ -19,7 +19,7 @@
 - 
 4. Gamstate
 - Variables: @winner
-- Methods: .display_board, .player_turn, .computer_turn, .check_winner
+- Methods: .display_board, .human_turn, .computer_turn, .check_winner
 -
 5. Computer AI
 - Variables: 
