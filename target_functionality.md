@@ -16,10 +16,11 @@
 3. Board
 - Variables: @columns (array), @full (bool)
 - Methods: .place_cell(column_number) (fills column and makes sure that called collumn is in board), .full? (bool)
-- 
+
 4. Gamestate
 - Variables: @winner, @board
 - Methods: .display_board, .player_turn, .computer_turn, .check_winner
+
 -
 5. Computer AI
 - Variables: 
