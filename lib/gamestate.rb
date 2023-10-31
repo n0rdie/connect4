@@ -24,6 +24,8 @@ class Gamestate
       # require 'pry'; binding.pry
       puts "#{row_string}|"
     end
+    puts "+----------------"
+    puts "Player pieces are represented by X's, and computer pieces are represented by O's."
   end 
   
   def cell_display_value(cell)
