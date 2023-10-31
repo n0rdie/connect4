@@ -10,17 +10,17 @@ RSpec.describe Gamestate do
   end
   
   describe '#initialize' do
-  it 'exists' do
-    gamestate = Gamestate.new
-    expect(gamestate).to be_a(Gamestate)
-  end
+    it 'exists' do
+      gamestate = Gamestate.new
+      expect(gamestate).to be_a(Gamestate)
+    end
+  end 
 
   describe '#display' do
-it 'displays a board' do
-    gamestate = Gamestate.new
-    gamestate.display
+    it 'displays a board' do
+      gamestate = Gamestate.new
+      gamestate.display
     end
   end
-end
 end
 
