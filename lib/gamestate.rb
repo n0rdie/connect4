@@ -2,37 +2,37 @@ require 'colorize'
 require './lib/cell'
 require './lib/column'
 require './lib/board'
-require './lib/gamestate'
+require './lib/computer_ai'
 
 class Gamestate
 
     attr_reader :ai, :board
     def initialize
-        @ai = Gamestate.new
+        @ai = Computer_Ai.new
         @board = Board.new
     end
   
-def display
-    puts " A B C D E F G"
-    puts "+----------------"
+    def display
+        puts " A B C D E F G"
+        puts "+----------------"
     
-    (0..5).reverse_each do |row_index|
-      row_string = "|"
-      @board.columns.each do |column|
-        cell = column.cells[row_index]
-        row_string += "#{cell_display_value(cell)} "
-      end 
-      # require 'pry'; binding.pry
-      puts "#{row_string}|"
-    end
-    puts "+----------------"
-    puts "Player pieces are represented by X's, and computer pieces are represented by O's."
-  end 
+        (0..5).reverse_each do |row_index|
+            row_string = "|"
+            @board.columns.each do |column|
+                cell = column.cells[row_index]
+                row_string += "#{cell_display_value(cell)} "
+            end 
+            # require 'pry'; binding.pry
+            puts "#{row_string}|"
+        end
+        puts "+----------------"
+        puts "Player pieces are represented by X's, and computer pieces are represented by O's."
+    end 
   
-  def cell_display_value(cell)
-    cell.player == 'empty' ? '.' :cell.player
-  end
-end 
+    def cell_display_value(cell)
+        cell.player == 'empty' ? '.' :cell.player
+    end
+
     def computer_turn
         @ai.place_random(@board)
     end
@@ -63,7 +63,7 @@ end
         end
 
         # horizontal
-        for x in 0..board.columns.length-1
+        for x in 0..@board.columns.length-1
             board.columns.each do |column|
                 if column.cells[x].find_player_owner == player
                     count
@@ -83,8 +83,3 @@ end
         false
     end
 end
-
-
-
-  
-
