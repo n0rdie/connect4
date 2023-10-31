@@ -10,23 +10,23 @@ class Gamestate
     @board = Board.new
   end
 
-  def cell_display_value
-    cell.player == 'empty' ? '.' :cell.player
-  end
   
   def display
     puts " A B C D E F G"
     puts "+----------------"
-
+    
     (0..5).reverse_each do |row_index|
       row_string = "|"
       @board.columns.each do |column|
-       cell = column.cells[row_index]
-       row_string += "#{} "
+        cell = column.cells[row_index]
+        row_string += "#{cell_display_value(cell)} "
       end 
       # require 'pry'; binding.pry
+      puts "#{row_string}|"
     end
-    puts "#{row_string}"
   end 
-
+  
+  def cell_display_value(cell)
+    cell.player == 'empty' ? '.' :cell.player
+  end
 end 
