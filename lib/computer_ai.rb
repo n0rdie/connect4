@@ -1,7 +1,6 @@
 require './lib/cell'
 require './lib/column'
 require './lib/board'
-require './lib/gamestate'
 
 class Computer_Ai
     def initialize
