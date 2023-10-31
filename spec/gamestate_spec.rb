@@ -5,6 +5,7 @@ require './lib/board'
 require './lib/gamestate'
 
 RSpec.describe Gamestate do
+
     it "can do human turn"
         gamestate = Gamestate.new
         expect(Gamestate.board.columns[0].cells[0].find_player_owner).to eq("empty")
@@ -25,3 +26,24 @@ RSpec.describe Gamestate do
         expect(passed).to eq(true)
     end
 end
+
+  before(:each) do
+    gamestate = Gamestate.new
+  end
+  
+  describe '#initialize' do
+    it 'exists' do
+      gamestate = Gamestate.new
+      expect(gamestate).to be_a(Gamestate)
+    end
+  end 
+
+  describe '#display' do
+    it 'displays a board' do
+      gamestate = Gamestate.new
+      gamestate.display
+    end
+  end
+end
+
+
