@@ -48,6 +48,23 @@ class ConnectFourRunner
   end
   
   
+  def game_over?(player)
+    if @gamestate.check_winner(player)
+      puts "#{player} wins!"
+      true
+    elsif @gamestate.full?
+      puts "It's a draw! The board is full."
+      true
+    else
+      false
+    end
+  end
+
+  def play_again?
+    puts "Do you want to play again? (Enter 'y' for yes, 'n' for no)"
+    choice = gets.chomp.downcase
+    choice == 'y'
+  end
 end
 
 
