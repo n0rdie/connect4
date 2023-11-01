@@ -26,6 +26,7 @@ class ConnectFourRunner
   
 
   def play_game
+    @gamestate = Gamestate.new
     @gamestate.display
     loop do
       puts "Player's turn. Enter the column letter (A-G) to place your piece:"
