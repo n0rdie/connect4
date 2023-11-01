@@ -74,12 +74,36 @@ class Gamestate
             num = 0
         end
 
-        # up diaganal
-        # will do l8r
-
         # down diaganal
-        # will do l8r
+        for x in 0..board.columns.length-4
+            for y in 0..board.columns[x].cells.length-4
+                if board.columns[x].cells[y].find_player_owner == player
+                    if board.columns[x+1].cells[y+1].find_player_owner == player
+                        if board.columns[x+2].cells[y+2].find_player_owner == player
+                            if board.columns[x+3].cells[y+3].find_player_owner == player
+                                return true
+                            end
+                        end
+                    end
+                end
+            end
+        end
 
+        # up diaganal
+        for x in 0..board.columns.length-4
+            for y in 3..board.columns[x].cells.length-1
+                if board.columns[x].cells[y].find_player_owner == player
+                    if board.columns[x+1].cells[y-1].find_player_owner == player
+                        if board.columns[x+2].cells[y-2].find_player_owner == player
+                            if board.columns[x+3].cells[y-3].find_player_owner == player
+                                return true
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
         false
     end
 end
