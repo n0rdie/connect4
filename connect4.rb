@@ -52,7 +52,7 @@ class ConnectFourRunner
     if @gamestate.check_winner(player)
       puts "#{player} wins!"
       true
-    elsif @gamestate.full?
+    elsif @gamestate.board.full?
       puts "It's a draw! The board is full."
       true
     else
