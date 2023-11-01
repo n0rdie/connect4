@@ -1,0 +1,54 @@
+require './lib/gamestate'
+
+class ConnectFourRunner
+  def initialize
+    @gamestate = Gamestate.new
+  end
+
+  def run
+    puts "Welcome to CONNECT FOUR"
+    loop do
+      puts "Enter 'p' to play. Enter 'q' to quit."
+      choice = gets.chomp.downcase
+
+      case choice
+      when 'p'
+        play_game
+      when 'q'
+        puts "Goodbye!"
+        break
+      else
+        puts "Invalid choice. Please enter 'p' to play or 'q' to quit."
+      end
+    end
+  end
+
+  
+
+  def play_game
+    @gamestate.display
+    loop do
+      puts "Player's turn. Enter the column letter (A-G) to place your piece:"
+      player_input = gets.chomp.upcase
+
+      if @gamestate.human_turn(player_input)
+        @gamestate.display
+        break if game_over?('Human')
+      else
+        puts "Invalid input. Please enter a valid column letter."
+      end
+
+      puts "Computer's turn."
+      @gamestate.computer_turn
+      @gamestate.display
+      break if game_over?('Computer')
+    end
+
+    play_again?
+  end
+  
+  
+end
+
+
+ConnectFourRunner.new.run
