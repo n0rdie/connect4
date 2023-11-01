@@ -42,19 +42,24 @@ class Gamestate
     end
 
     def check_winner(player)
+
         num = 0
-        def count
-            num += 1
-            if num == 4
-                return true
-            end
-        end
+
+        #def count(num)
+        #    num += 1
+        #    if num == 4
+        #        return true
+        #    end
+        #end
         
         # vertical
         board.columns.each do |column|
             column.cells.each do |cell|
                 if cell.find_player_owner == player
-                    count
+                    num += 1
+                    if num == 4
+                        return true
+                    end
                 else
                     num = 0
                 end
@@ -63,10 +68,13 @@ class Gamestate
         end
 
         # horizontal
-        for x in 0..@board.columns.length-1
+        for x in 0..@board.columns[0].cells.length-1
             board.columns.each do |column|
                 if column.cells[x].find_player_owner == player
-                    count
+                    num += 1
+                    if num == 4
+                        return true
+                    end
                 else
                     num = 0
                 end
