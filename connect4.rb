@@ -35,17 +35,16 @@ class ConnectFourRunner
       if @gamestate.human_turn(player_input)
         @gamestate.display
         break if game_over?('Human')
+        puts "Computer's turn."
+        @gamestate.computer_turn
+        @gamestate.display
+        break if game_over?('Computer')
       else
         puts "Invalid input. Please enter a valid column letter."
       end
-
-      puts "Computer's turn."
-      @gamestate.computer_turn
-      @gamestate.display
-      break if game_over?('Computer')
     end
 
-    play_again?
+    #play_again?
   end
   
   
@@ -61,11 +60,11 @@ class ConnectFourRunner
     end
   end
 
-  def play_again?
-    puts "Do you want to play again? (Enter 'y' for yes, 'n' for no)"
-    choice = gets.chomp.downcase
-    choice == 'y'
-  end
+  #def play_again?
+  #  puts "Do you want to play again? (Enter 'y' for yes, 'n' for no)"
+  #  choice = gets.chomp.downcase
+  #  choice == 'y'
+  #end
 end
 
 
